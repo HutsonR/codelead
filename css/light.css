@@ -1,0 +1,127 @@
+.posts {
+  background: #f9f9f9;
+  color: #111;
+}
+div#ajaxsearchlite1 {
+  border: 2px solid #111;
+}
+.current.page-numbers,
+.page-numbers:hover {
+  background: #111;
+  color: #fff;
+}
+.page-numbers {
+  border: 2px solid #111;
+}
+#theme-button {
+  color: #111;
+  border: 2px solid #111;
+}
+#theme-button:hover {
+  background: #111;
+  color: #fff;
+}
+.post-content,
+.post-content-right {
+  background: #f6f6f6;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 5px 5px 10px 0px rgba(34, 60, 80, 0.2);
+}
+.single-post_header-title a {
+  color: #6f4cc4;
+}
+.post-content-btn {
+  border: 2px solid #111;
+  color: #111;
+}
+.posts .container .single-post a {
+  color: #6f4cc4;
+}
+.post-content_text a {
+  color: #6f4cc4;
+}
+.post-content-btn:hover {
+  background: #111;
+  color: #e3e3e3;
+}
+.post-content-btn img {
+  filter: invert(0);
+}
+.post-content-btn:hover img {
+  filter: invert(1);
+}
+.post-content_text {
+  color: #111;
+}
+.way a {
+  color: #111 !important;
+}
+.way img {
+  filter: invert(0);
+}
+.time img,
+.posts .container .single-post .time img {
+  filter: invert(0);
+}
+.time {
+  color: #111;
+}
+.posts .container .single-post img {
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.posts .container .single-post img:hover {
+  box-shadow: 8px 8px 10px 4px #ccc;
+}
+div.asl_w {
+  border: 2px solid #111 !important;
+}
+/* post-menu */
+.post-menu {
+  background: #fff;
+}
+.post-menu .close {
+  filter: invert(0);
+}
+.useful-app {
+  border: 3px solid #111;
+  color: #111;
+}
+.useful-app:hover {
+  background-color: #111;
+  color: #fff;
+}
+.post-right-popular h1 {
+  color: #111;
+  padding-bottom: 8px;
+}
+.post-menu-btn {
+  border: 3px solid #111;
+}
+.post-menu-btn:hover {
+  background: #111;
+  color: #fff;
+}
+.useful-app {
+  border: 3px solid #111;
+}
+.useful-app:hover {
+  background: #111;
+  color: #fff;
+}
+/* post-menu end */
+.sidebar div .cat-item a {
+  color: rgb(26, 26, 26);
+}
+.page-numbers {
+  color: #111;
+}
+.single-post_content p,
+.single-post_content h2 {
+  color: rgb(26, 26, 26);
+}
+.posts .share {
+  color: rgb(26, 26, 26);
+}
