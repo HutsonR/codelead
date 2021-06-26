@@ -21,10 +21,10 @@
     <link rel="mask-icon" href="<?php echo get_template_directory_uri() ?>/img/fav/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <link
+    <!-- <link
         href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
         rel="stylesheet"
-      />
+      /> -->
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -40,15 +40,15 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/64630069" style="position:absolute; left:-9999px;" alt="yandex" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
-    <meta property="og:title" content="CodeLead - Разработка и дизайн сайтов. Создайте свой личный сайт">
-    <meta property="og:description" content="CodeLead. Разрабатываем сайты, интернет магазины более 6 лет. Создадим лендинг и любой WEB-сайт под ключ для любого вида бизнеса по вашим предпочтениям. Красивый дизайн. Низкие цены">
+    <meta property="og:title" content="Разработка и дизайн сайтов - CodeLead">
+    <meta property="og:description" content="Разрабатываем сайты, интернет магазины более 6 лет. Создадим Web-сайт любой сложности под ключ для любого вида бизнеса по вашим предпочтениям. Красивый дизайн. Низкие цены">
     <meta property="og:url" content="https://codelead.ru/">
     <meta property="og:locale" content="ru_RU">
     <meta property="og:image" content="https://codelead.ru/wp-content/uploads/2020/06/screenshot-11.png">
     <meta property="og:image:width" content="968">
     <meta property="og:image:height" content="504">
-    <title>CodeLead - Разработка и дизайн сайтов. Создайте свой личный сайт</title>
-    <meta name="description" content="CodeLead. Разрабатываем сайты, интернет магазины более 6 лет. Создадим лендинг и любой WEB-сайт под ключ для любого вида бизнеса по вашим предпочтениям. Красивый дизайн. Низкие цены">
+    <title>Разработка и дизайн сайтов - CodeLead</title>
+    <meta name="description" content="Разрабатываем сайты, интернет магазины более 6 лет. Создадим Web-сайт любой сложности под ключ для любого вида бизнеса по вашим предпочтениям. Красивый дизайн. Низкие цены">
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>

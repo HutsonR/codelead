@@ -1,7 +1,7 @@
 	    <!--========== CONTACT ==========-->
     <section class="contact" id="contact">
       <div class="container">
-        <h1 class="sec-title">Заявка на разработку</h1>
+        <h2 class="sec-title">Заявка на разработку</h2>
         <p class="develop__subtitle">
           В ближайшее время мы свяжемся с вами, согласуем выполнение, грамотно
           расставим сроки и сформируем цену
@@ -30,40 +30,47 @@
             </div>
           </div>
           <div class="contact__form">
-            <form
-              action="<?php echo get_template_directory_uri() ?>/mail.php"
-              method="POST"
-              accept-charset="utf-8"
-            >
-              <input
-                placeholder="Имя*"
-                type="text"
-                name="user_name"
-                required="required"
-              />
-              <input
-                placeholder="E-mail*"
-                type="email"
-                name="user_email"
-                required="required"
-              />
-              <textarea
-                placeholder="Опишите задачу или задайте вопрос*"
-                name="textsend"
-                required="required"
-              ></textarea>
-              <div class="col">
-                <input type="hidden" name="token" id="token" />
-                <button type="submit" class="c-button c-button--gooey">
-                  отправить
-                  <div class="c-button__blobs">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
-                </button>
-              </div>
-            </form>
+            <div class="contact-form">
+            <button data-remodal-action="close" class="remodal-close"></button>
+            <div class="formArea">
+              <p class="msgs"></p>
+              <form id="firstForm" class="form" autocomplete="off">
+                <fieldset class="form-fieldset ui-input __first">
+                  <input name="uname" type="text" id="username" tabindex="0" />
+                  <label for="username">
+                    <span data-text="Введите ваше имя">Имя</span>
+                  </label>
+                </fieldset>
+
+                <fieldset class="form-fieldset ui-input __second">
+                  <input name="uemail" type="email" id="email" tabindex="0" />
+                  <label for="email">
+                    <span data-text="Введите ваш e-mail">E-mail</span>
+                  </label>
+                </fieldset>
+                <fieldset class="form-fieldset ui-input __second">
+                  <textarea required name="formInfoT" id="formInfoT" cols="30" rows="10" tabindex="0" ></textarea>
+                  <label for="formInfo">
+                    <span data-text="Введите ваше сообщение или задайте вопрос">Опишите задачу или задайте вопрос</span>
+                  </label>
+                </fieldset>
+
+                <input name="formInfo" class="formInfo" type="hidden" value=""/>
+                <!-- DIV - в котором выводится блок с recaptcha -->
+                <div class="g-recaptcha" data-sitekey="6LcAt_sZAAAAAEb3mN92vofk1h5lX8kAHanbyEDn" data-theme="light"></div>
+                <div class="col">
+                  <input type="hidden" name="token" id="token" />
+                  <button type="submit" class="c-button formBtn  c-button--gooey ooy-btn-submit">
+                    отправить
+                    <div class="c-button__blobs">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -138,6 +145,15 @@
       src="https://kit.fontawesome.com/8761c8ae2d.js"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript">
+    $(".linkButton").click(function() {
+        $( "input[name*='formInfo']" ).val($(this).attr( "title" ));
+    });
+    </script>
+    <script src="<?php echo get_template_directory_uri() ?>/modalform/libs/remodal/remodal.min.js"></script>
+    <script src="<?php echo get_template_directory_uri() ?>/modalform/js/form.js"></script>
+    <!-- API ключ от Google -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();

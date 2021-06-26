@@ -21,10 +21,10 @@
     <link rel="mask-icon" href="<?php echo get_template_directory_uri() ?>/img/fav/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <link
+    <!-- <link
         href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
         rel="stylesheet"
-      />
+      /> -->
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};

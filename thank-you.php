@@ -9,7 +9,7 @@
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
     <meta name="format-detection" content="telephone=no" />
-    <title>Hutson веб-разработчик</title>
+    <title>Ваше письмо успешно отправлено - CodeLead</title>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="shortcut icon" href="#" type="image/png" />
     <?php wp_head(); ?>

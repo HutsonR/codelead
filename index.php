@@ -4,8 +4,8 @@
         <div class="main__text-wrapper">
           <h1>Разработка и продвижение сайтов</h1>
           <h3>
-            Веб-разработка и продвижение сайтов с индивидуальным подходом.
-            Уточнить детали: 8(904)341-70-02
+            Веб-разработка и продвижение сайтов с индивидуальным подходом. <br>
+            <span>Уточнить детали: <a href="tel:+79043417002">8(904)341-70-02</a></span>
           </h3>
           <a href="<?php the_field('home_link','options'); ?>/contact" class="c-button c-button--gooey">
             Заказать сайт
@@ -22,7 +22,10 @@
     <section class="about-prev" id="about-prev">
       <div class="container bd-grid">
         <div class="about-prev__img section-text__img">
-          <img src="<?php echo get_template_directory_uri() ?>/img/logo2.png" alt="develop" />
+          <picture>
+            <source srcset="<?php echo get_template_directory_uri() ?>/img/logo2.webp" type="image/webp">
+            <img src="<?php echo get_template_directory_uri() ?>/img/logo2.png" alt="develop" />
+          </picture>
         </div>
         <div class="about-prev__data section-text__data">
           <h2 class="about-prev__data-title sec-title">Знакомство</h2>
@@ -97,7 +100,10 @@
     <section class="individ" id="individ">
       <div class="container bd-grid">
         <div class="individ__img section-text__img">
-          <img src="<?php echo get_template_directory_uri() ?>/img/Untitled-1.png" alt="develop" />
+          <picture>
+            <source srcset="<?php echo get_template_directory_uri() ?>/img/Untitled-1.webp" type="image/webp">
+            <img src="<?php echo get_template_directory_uri() ?>/img/Untitled-1.png" alt="develop" />
+          </picture>
         </div>
         <div class="individ__data section-text__data">
           <h2 class="individ__data-title sec-title">
@@ -222,7 +228,10 @@
           </p>
         </div>
         <div class="individ__img section-text__img">
-          <img src="<?php echo get_template_directory_uri() ?>/img/profi.png" alt="develop" />
+          <picture>
+            <source srcset="<?php echo get_template_directory_uri() ?>/img/profi.webp" type="image/webp">
+            <img src="<?php echo get_template_directory_uri() ?>/img/profi.png" alt="develop" />
+          </picture>
         </div>
       </div>
     </section>
@@ -235,7 +244,14 @@
          <?php while ( $query->have_posts()):$query->the_post(); ?>
 			<div class="portfolio__item">
 				<div class="portfolio__img">
-				<img src="<?php the_field('work_img'); ?>" alt="<?php the_field('work_title'); ?>" />
+        <picture>
+          <source srcset="<?php the_field('work_img-webp'); ?>" type="image/webp">
+          <img src="<?php
+               $image = get_field('work_img');
+               $image = $image['sizes']['medium_large'];
+               if (!$image) $image = get_template_directory_uri() . '/img/no-image.jpg';
+               echo "$image";	?>" alt="<?php the_field('work_title'); ?>" />
+        </picture>
 
 				<a href="<?php echo get_the_permalink(); ?>" class="portfolio__link">
 					<span class="portfolio__link-name">Посмотреть детали</span>
@@ -267,7 +283,10 @@
         <div class="popular__item popular-individ popular-first bd-grid">
           <img class="points" src="<?php echo get_template_directory_uri() ?>/img/dot.png" alt="dotts" />
           <div class="popular__item-img">
-            <img src="<?php echo get_template_directory_uri() ?>/img/EuWBj8GXcAEb-MP.png" alt="Индивидуальные решения" />
+            <picture>
+              <source srcset="<?php echo get_template_directory_uri() ?>/img/EuWBj8GXcAEb-MP.webp" type="image/webp">
+              <img src="<?php echo get_template_directory_uri() ?>/img/EuWBj8GXcAEb-MP.png" alt="Индивидуальные решения" />
+            </picture>
           </div>
           <div class="popular__item-data">
             <h3 class="popular__item-data-title">Индивидуальные решения</h3>
@@ -294,17 +313,20 @@
         <div class="reviews__wrapper">
           <div>
             <div class="reviews__item">
-              <img
+              <picture>
+                <source srcset="<?php echo get_template_directory_uri() ?>/img/nataly.webp" type="image/webp">
+                <img
                 src="<?php echo get_template_directory_uri() ?>/img/nataly.jpg"
                 alt="logo-user"
                 class="reviews__item-logo"
-              />
+                />
+              </picture>
               <p class="reviews__item-name">Наталья</p>
               <p class="reviews__item-desc">
-                Сотрудничаю с Романом по нескольким проектам. Очень довольна
+                Сотрудничаю с CodeLead по нескольким проектам. Очень довольна
                 качеством и ответственным подходом к выполнению заданий. Могу с
-                чистой совестью рекомендовать его, если вам нужны услуги
-                web-специалиста.
+                чистой совестью рекомендовать их, если вам нужны услуги
+                web-специалистов.
               </p>
               <p class="reviews__item-company">
                 Solar Web Studio (ИП Тутакина Н.П,)
@@ -313,33 +335,39 @@
           </div>
           <div>
             <div class="reviews__item">
-              <img
-                src="https://codelead.ru/wp-content/uploads/2021/02/whatsapp-image-2021-02-15-at-20.05.23.jpeg"
+              <picture>
+                <source srcset="<?php echo get_template_directory_uri() ?>/img/whatsapp-image-2021-02-15-at-20.05.23.webp" type="image/webp">
+                <img
+                src="<?php echo get_template_directory_uri() ?>/img/whatsapp-image-2021-02-15-at-20.05.23-min.jpeg"
                 alt="logo-user"
                 class="reviews__item-logo"
-              />
+                />
+              </picture>
               <p class="reviews__item-name">Александр</p>
               <p class="reviews__item-desc">
-                Задание Романом выполнено вовремя, не пропадал. Был всегда на
-                связи. Правки, даже которые не обговаривали, выполнил
+                Задание студией выполнено вовремя, не пропадали. Были всегда на
+                связи. Правки, даже которые не обговаривали, выполнили
                 великолепно. Предлагал свои более верные решения. Буду работать
-                еще. Спасибо, Роман!
+                еще. Спасибо, CodeLead!
               </p>
               <p class="reviews__item-company">Computy Studio</p>
             </div>
           </div>
           <div>
             <div class="reviews__item">
-              <img
+              <picture>
+                <source srcset="<?php echo get_template_directory_uri() ?>/img/oleg.webp" type="image/webp">
+                <img
                 src="<?php echo get_template_directory_uri() ?>/img/oleg.jpg"
                 alt="logo-user"
                 class="reviews__item-logo"
-              />
+                />
+              </picture>
               <p class="reviews__item-name">Олег</p>
               <p class="reviews__item-desc">
-                Мы и не думали наткнуться на такого профессионального
-                разработчика. Наши поиски разработчика прошли удачно. Роман
-                оказался знатоком своего дела. Теперь имя Роман ассоциируется в
+                Мы и не думали наткнуться на такую профессиональную
+                студию. Наши поиски разработчика прошли удачно. CodeLead
+                оказались знатоками своего дела. Теперь студия CodeLead ассоциируется в
                 нашей компании со словом "Профессионализм"!
               </p>
               <p class="reviews__item-company">FridayCompanyLiciDreqi</p>
@@ -347,11 +375,14 @@
           </div>
           <div>
             <div class="reviews__item">
-              <img
-                src="<?php echo get_template_directory_uri() ?>/img/perfil.png"
+              <picture>
+                <source srcset="<?php echo get_template_directory_uri() ?>/img/perfil.webp" type="image/webp">
+                <img
+                src="<?php echo get_template_directory_uri() ?>/img/perfil.jpg"
                 alt="logo-user"
                 class="reviews__item-logo"
-              />
+                />
+              </picture>
               <p class="reviews__item-name">Никита</p>
               <p class="reviews__item-desc">
                 Всё чётко, грамотно и в срок. На все мои замечания вносились

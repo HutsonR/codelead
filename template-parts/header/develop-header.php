@@ -40,15 +40,11 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/64630069" style="position:absolute; left:-9999px;" alt="yandex" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
-    <meta property="og:title" content="<?php the_title(); ?> - CodeLead">
-    <meta property="og:description" content="CodeLead. Разрабатываем сайты, интернет магазины более 6 лет. Создадим лендинг и любой WEB-сайт под ключ для любого вида бизнеса по вашим предпочтениям. Красивый дизайн. Низкие цены">
     <meta property="og:url" content="https://codelead.ru/">
     <meta property="og:locale" content="ru_RU">
     <meta property="og:image" content="https://codelead.ru/wp-content/uploads/2020/06/screenshot-11.png">
     <meta property="og:image:width" content="968">
     <meta property="og:image:height" content="504">
-    <title><?php the_title(); ?> - CodeLead</title>
-    <meta name="description" content="CodeLead. Разрабатываем сайты, интернет магазины более 6 лет. Создадим лендинг и любой WEB-сайт под ключ для любого вида бизнеса по вашим предпочтениям. Красивый дизайн. Низкие цены">
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>

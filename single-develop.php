@@ -11,11 +11,12 @@
       <div class="container">
         <div class="main__text-wrapper">
           <h1>Разработка <?php the_field('site_main-title'); ?></h1>
-          <h1 class="block-develop__price">От <?php the_field('site_price'); ?> руб.</h1>
+          <h2 class="block-develop__price">От <?php the_field('site_price'); ?> руб.</h2>
           <h3>
             Создание <?php the_field('site_main-title'); ?> с индивидуальным решением и подходом. Точный
             срок и расчет стоимости устанавливается после изучения Вашего
-            проекта. Уточнить детали: 8(904)341-70-02
+            проекта. <br>
+            <span>Уточнить детали: <a href="tel:+79043417002">8(904)341-70-02</a></span>
           </h3>
           <a href="<?php the_field('home_link','options'); ?>/contact" class="c-button c-button--gooey">
             Заказать разработку
@@ -59,66 +60,66 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <div class="swiper-slide steps__item">
-                <h1 class="steps__item-number">1</h1>
-                <h2 class="steps__item-title">Обсуждение проекта</h2>
+                <h4 class="steps__item-number">1</h4>
+                <h3 class="steps__item-title">Обсуждение проекта</h3>
                 <p class="steps__item-text">
                   Совместное обсуждение концепции и всех деталей проекта для
                   общего понимая работы
                 </p>
               </div>
               <div class="swiper-slide steps__item">
-                <h1 class="steps__item-number">2</h1>
-                <h2 class="steps__item-title">Анализ конкурентов</h2>
+                <h4 class="steps__item-number">2</h4>
+                <h3 class="steps__item-title">Анализ конкурентов</h3>
                 <p class="steps__item-text">
                   Производим анализ ниши и Ваших конкурентов, разрабатываем
                   стратегию сайта и его конкурентные преимущества
                 </p>
               </div>
               <div class="swiper-slide steps__item">
-                <h1 class="steps__item-number">3</h1>
-                <h2 class="steps__item-title">Проработка архитектуры сайта</h2>
+                <h4 class="steps__item-number">3</h4>
+                <h3 class="steps__item-title">Проработка архитектуры сайта</h3>
                 <p class="steps__item-text">
                   Начальная проработка навигации, состав страницы, адаптация
                   вложенных страниц и т.д.
                 </p>
               </div>
               <div class="swiper-slide steps__item">
-                <h1 class="steps__item-number">4</h1>
-                <h2 class="steps__item-title">
+                <h4 class="steps__item-number">4</h4>
+                <h3 class="steps__item-title">
                   Разработка индивидуального стиля
-                </h2>
+                </h3>
                 <p class="steps__item-text">
                   Создание логотипа, контрастной цветовой палитры, фирменных
                   шрифтов и подходящих символов
                 </p>
               </div>
               <div class="swiper-slide steps__item">
-                <h1 class="steps__item-number">5</h1>
-                <h2 class="steps__item-title">Разработка клиентской стороны</h2>
+                <h4 class="steps__item-number">5</h4>
+                <h3 class="steps__item-title">Разработка клиентской стороны</h3>
                 <p class="steps__item-text">
                   Удобная адаптивная, кроссбраузерная вёрстка под все браузеры и
                   современные устройства
                 </p>
               </div>
               <div class="swiper-slide steps__item">
-                <h1 class="steps__item-number">6</h1>
-                <h2 class="steps__item-title">Разработка серверной стороны</h2>
+                <h4 class="steps__item-number">6</h4>
+                <h3 class="steps__item-title">Разработка серверной стороны</h3>
                 <p class="steps__item-text">
                   Насадка вёрстки на удобную CMS и проработка качества настроек
                   страницы
                 </p>
               </div>
               <div class="swiper-slide steps__item">
-                <h1 class="steps__item-number">7</h1>
-                <h2 class="steps__item-title">Проверка работы</h2>
+                <h4 class="steps__item-number">7</h4>
+                <h3 class="steps__item-title">Проверка работы</h3>
                 <p class="steps__item-text">
                   Проверка всех процессов сайта, корректировка недочётов и
                   оптимизация кода
                 </p>
               </div>
               <div class="swiper-slide steps__item">
-                <h1 class="steps__item-number">8</h1>
-                <h2 class="steps__item-title">Поддержка и обучение</h2>
+                <h4 class="steps__item-number">8</h4>
+                <h3 class="steps__item-title">Поддержка и обучение</h3>
                 <p class="steps__item-text">
                   Обучение правилам пользования с системой управления сайта
                 </p>

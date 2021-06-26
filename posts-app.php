@@ -12,7 +12,6 @@
       </div>
    </div>
    <div class="container">
-    <!-- <a class="theme-button" id="theme-button">Сменить тему</a> -->
       <div class="posts-wrapper posts-wrapper__anim">
          <h1 class="post-left__title"><i class="fas fa-fire-alt"></i> Крутые анимации</h1>
          <div class="post-left post-anim">
@@ -34,7 +33,7 @@
                <iframe src="https://www.youtube.com/embed/<?php the_field('embed-code'); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                <div class="anim-content_text">
                   <h2><?php the_title(); ?></h2>
-                  <p><?php the_field('anim-desc'); ?></p>
+                  <div class="anim-content-text-data"><?php the_field('anim-desc'); ?></div>
                   <a class="anim-btn" target="_blank" href="<?php the_field('anim-codepen'); ?>">Посмотреть на CodePen <i class="fab fa-codepen"></i></a>
                </div>
             </div>

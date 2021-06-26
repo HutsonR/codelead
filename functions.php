@@ -264,3 +264,72 @@ function posts_custom_column_views($column_name, $id){
         echo getPostViews(get_the_ID());
     }
 }
+
+// удаление пробелов в записях
+remove_filter( 'the_content', 'wpautop' );// для контента
+remove_filter( 'the_excerpt', 'wpautop' );// для анонсов
+remove_filter( 'comment_text', 'wpautop' );// для комментарий 
+
+
+// excerpt (пару слов из the_content)
+add_filter( 'excerpt_length', function(){
+	return 17;
+} );
+
+add_filter('excerpt_more', function($more) {
+	return '...';
+});
+
+// Микроразметка страниц
+function opg_html($output){
+return $output .' prefix="og: http://ogp.me/ns#"';
+}
+add_filter('language_attributes', 'opg_html');
+
+function facebook_open_graph(){
+global $post;
+global $wp;
+//ДЛЯ ССЫЛОК
+$current_url = home_url($wp->request);
+ 
+//ДЛЯ DESCRIPTION
+if($excerpt = $post->post_excerpt){
+$trim_words  = strip_tags($post->post_excerpt);
+} elseif($wptw = wp_trim_words(get_the_content(), 25)){
+$trim_words = preg_replace('/[""]/', '', $wptw);
+}else{ 
+$trim_words = get_bloginfo('description');
+}
+//ДЛЯ ИЗОБРАЖЕНИЙ
+$first_img = '';
+$otimg = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+$first_img = $matches [1][0];
+if(empty($first_img)){
+$first_img = get_bloginfo('template_directory'). '/img/Screenshot (11).png';
+}
+//ОБЩИЕ META-ТЕГИ
+echo '<meta property="og:type" content="article"/>';
+echo '<meta property="og:site_name" content="';
+echo bloginfo('name');
+echo '"/>';
+if(has_post_thumbnail( $post->ID )){
+$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
+}else{
+echo '<meta property="og:image" content="' . $first_img . '"/>';
+}
+echo '<meta property="og:description" content="' . $trim_words. '"/>';
+//META-ТЕГИ ДЛЯ СТАТЕЙ, СТРАНИЦ
+if ( is_singular()){
+echo '<meta property="og:title" content="' . get_the_title() . '"/>';
+echo '<meta property="og:url" content="' . get_permalink() . '"/>';
+}
+else{ 
+//META-ТЕГИ ДЛЯ ГЛАВНОЙ, РУБРИКИ И ОСТАЛЬНЫХ
+echo '<meta property="og:title" content="';
+echo bloginfo('name');
+echo '"/>';
+echo '<meta property="og:url" content="'.$current_url.'"/>';
+}
+}
+add_action( 'wp_head', 'facebook_open_graph' );

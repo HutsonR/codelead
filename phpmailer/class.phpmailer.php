@@ -1450,6 +1450,38 @@ class PHPMailer
     }
 
     /**
+     * Check whether a file path is of a permitted type.
+     * Used to reject URLs and phar files from functions that access local file paths,
+     * such as addAttachment.
+     * @param string $path A relative or absolute path to a file.
+     * @return bool
+     */
+    protected static function isPermittedPath($path)
+    {
+        return !preg_match('#^[a-z]+://#i', $path);
+    }
+
+    /**
+     * Check whether a file path is safe, accessible, and readable.
+     *
+     * @param string $path A relative or absolute path to a file
+     *
+     * @return bool
+     */
+    protected static function fileIsAccessible($path)
+    {
+        if (!static::isPermittedPath($path)) {
+            return false;
+        }
+        $readable = file_exists($path);
+        //If not a UNC path (expected to start with \\), check read permission, see #2069
+        if (strpos($path, '\\\\') !== 0) {
+            $readable = $readable && is_readable($path);
+        }
+        return  $readable;
+    }
+
+    /**
      * Send mail using the PHP mail() function.
      * @param string $header The message headers
      * @param string $body The message body
@@ -1754,7 +1786,7 @@ class PHPMailer
         // There is no English translation file
         if ($langcode != 'en') {
             // Make sure language file path is readable
-            if (!is_readable($lang_file)) {
+            if (!static::fileIsAccessible($lang_file)) {
                 $foundlang = false;
             } else {
                 // Overwrite language-specific strings.
@@ -2465,7 +2497,7 @@ class PHPMailer
     public function addAttachment($path, $name = '', $encoding = 'base64', $type = '', $disposition = 'attachment')
     {
         try {
-            if (!@is_file($path)) {
+            if (!static::fileIsAccessible($path)) {
                 throw new phpmailerException($this->lang('file_access') . $path, self::STOP_CONTINUE);
             }
 
@@ -2646,7 +2678,7 @@ class PHPMailer
     protected function encodeFile($path, $encoding = 'base64')
     {
         try {
-            if (!is_readable($path)) {
+            if (!static::fileIsAccessible($path)) {
                 throw new phpmailerException($this->lang('file_open') . $path, self::STOP_CONTINUE);
             }
             $magic_quotes = get_magic_quotes_runtime();
@@ -2989,7 +3021,7 @@ class PHPMailer
      */
     public function addEmbeddedImage($path, $cid, $name = '', $encoding = 'base64', $type = '', $disposition = 'inline')
     {
-        if (!@is_file($path)) {
+        if (!static::fileIsAccessible($path)) {
             $this->setError($this->lang('file_access') . $path);
             return false;
         }

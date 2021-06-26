@@ -10,7 +10,11 @@
 
 			<?php  $query = new WP_Query( 'post_type=work' ); ?>
 			<?php while ( $query->have_posts()):$query->the_post(); ?>
-			<div class="card" style="background-image: url('<?php the_field('work_img'); ?>'); background-position: center;">
+			<div class="card" style="background-image: url('<?php
+               $image = get_field('work_img');
+               $image = $image['sizes']['medium_large'];
+               if (!$image) $image = get_template_directory_uri() . '/img/no-image.jpg';
+               echo "$image";	?>'); background-position: center;">
 				<div class="card__content">
 					<a target="_blank" href="<?php echo get_the_permalink(); ?>">
 					<div class="card__content--description">

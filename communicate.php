@@ -6,7 +6,6 @@
           <h1>Принципы работы CodeLead с клиентами</h1>
           <h3>
             Основа наших хороших отношений - взаимопонимание и открытость.
-            Уточнить детали: 8(904)341-70-02
           </h3>
           <a href="<?php the_field('home_link','options'); ?>/contact" class="c-button c-button--gooey">
             Заказать сайт
@@ -23,7 +22,10 @@
     <section class="individ" id="individ">
       <div class="container bd-grid">
         <div class="individ__img">
-          <img src="<?php echo get_template_directory_uri() ?>/img/Untitled-1.png" alt="develop" />
+          <picture>
+            <source srcset="<?php echo get_template_directory_uri() ?>/img/Untitled-1.webp" type="image/webp">
+            <img src="<?php echo get_template_directory_uri() ?>/img/Untitled-1.png" alt="develop" />
+          </picture>
         </div>
         <div class="individ__data">
           <h2 class="individ__data-title sec-title">
